@@ -53,6 +53,7 @@ if (\OC::$server->getConfig()->getSystemValue('installed', false)) {
 	$application->add(new OC\Core\Command\Config\App\DeleteConfig(\OC::$server->getConfig()));
 	$application->add(new OC\Core\Command\Config\App\GetConfig(\OC::$server->getConfig()));
 	$application->add(new OC\Core\Command\Config\App\SetConfig(\OC::$server->getConfig()));
+	$application->add(new OC\Core\Command\App\GetPath());
 	$application->add(new OC\Core\Command\Config\Import(\OC::$server->getConfig()));
 	$application->add(new OC\Core\Command\Config\ListConfigs(\OC::$server->getSystemConfig(), \OC::$server->getAppConfig()));
 	$application->add(new OC\Core\Command\Config\System\DeleteConfig(\OC::$server->getSystemConfig()));
