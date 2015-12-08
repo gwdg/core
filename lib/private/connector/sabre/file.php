@@ -331,7 +331,11 @@ class File extends Node implements IFile {
 			return [];
 		}
 
-		return $storage->getDirectDownload($internalPath);
+		try {
+			return $storage->getDirectDownload($internalPath);
+		} catch (\Exception $e) {
+			$this->convertToSabreException($e);
+		}
 	}
 
 	/**
